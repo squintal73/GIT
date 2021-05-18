@@ -1,1 +1,0 @@
-sshpass -p lliege@123 ssh -t -o StrictHostKeyChecking=no lliege@192.168.1.5 'docker exec -ti php-fpm5.6 bash -c "cd /var/www/html/grp3 && git pull && php bin/console --no-interaction doc:mi:mi php bin/console assets:install web --symlink composer install rm -r var"'
