@@ -1,0 +1,48 @@
+date_default_timezone_set('America/Sao_Paulo');
+
+// Nome do arquivo
+$nomeArquivo = "mensagens.xml";
+// versão do encoding xml
+$dom = new DOMDocument("1.0", "ISO-8859-7");
+
+if ( !file_exists($nomeArquivo) ) {
+    // criando nó principal
+    $root = $dom->createElement("mensagens");
+    // retirar os espaços em branco
+    $dom->preserveWhiteSpace = false;
+    // gerar código ??
+    $dom->formatOutput = true;
+} else {
+    // carrega o arquivo
+    $dom->load( $nomeArquivo );
+    // recupera nó principal
+    $root = $dom->documentElement;
+}
+$msg = addMensagem($dom, "Teste2", "12345678911");
+// adicionando ao root
+$root->appendChild($msg);
+$dom->appendChild($root);
+
+// salva o arquivo
+$dom->save($nomeArquivo);
+
+// mostrar
+header("Content-Type: text/xml");
+print $dom->saveXML();
+
+function addMensagem($documento, $mensagem, $cpf_origem) {
+    // criar msg
+    $msg = $documento->createElement("msg");
+    // criar nó data
+    $data = date('j/n/Y H:i:s');
+    $dataElm = $documento->createElement("data_envio", $data);
+    // criar nó origem
+    $cpf_origemElm = $documento->createElement("cpf_origem", $cpf_origem);
+    // criar nó mensagem (texto)
+    $mensagemElm = $documento->createElement("mensagem", $mensagem);
+
+    $msg->appendChild($dataElm);
+    $msg->appendChild($cpf_origemElm);
+    $msg->appendChild($mensagemElm);
+    return $msg;
+}

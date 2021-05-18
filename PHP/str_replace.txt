@@ -1,0 +1,5 @@
+str_replace(procurar, substituto, origem, $ocorrencias)
+procurar - o texto a procurar
+substituto - o texto que deve substituir o que for encontrado em procurar
+origem - a string onde está o conteúdo a ser substituído
+$ocorrencias (opcional) - esta variável vai receber o valor de quantas vezes o replace foi executado e o texto encontrado/substituído.

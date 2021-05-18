@@ -1,0 +1,10 @@
+Funções em PHP para manipular arquivos
+Em resumo, as funções que utilizaremos em todo tutorial são:
+
+fopen() – ‘Abre’ o arquivo para que possa ser manipulado.
+fgets() – Pega uma linha do arquivo até o máximo de 1024bytes.
+feof() – Durante a leitura de um arquivo, avisa se chegou ao final.
+file_get_contents() – Pega todo conteúdo do arquivo aberto como uma string.
+ftruncate() – Reduz o tamanho do arquivo. Usado para apagar seu conteúdo.
+fwrite() – Escreve no arquivo.
+unlink() – Apaga o arquivo indicado.
