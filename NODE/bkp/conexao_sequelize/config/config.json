@@ -1,0 +1,12 @@
+{
+    "development": {
+        "dialect": "postgres",
+        "port": 25432,
+        "host": "localhost",
+        "schema": "public",
+        "database": "grp_ibiuna_13012021",
+        "username": "postgres",
+        "password": "postgres",
+        "logging": false
+    }
+}
