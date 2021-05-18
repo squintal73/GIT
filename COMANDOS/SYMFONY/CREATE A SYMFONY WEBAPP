@@ -1,0 +1,26 @@
+Creating Symfony Applications
+
+With symfony command:
+
+# run this if you are building a traditional web application
+$ symfony new my_project_name --full
+
+# run this if you are building a microservice, console application or API
+$ symfony new my_project_name
+
+
+Or composer command:
+
+# run this if you are building a traditional web application
+$ composer create-project symfony/website-skeleton my_project_name
+$ composer create-project symfony/website-skeleton:^4.4 my_project_name
+
+# run this if you are building a microservice, console application or API
+$ composer create-project symfony/skeleton my_project_name
+
+And Then
+
+$ cd my-project/
+$ symfony server:start
+
+or php bin/console server:run 

@@ -1,0 +1,7 @@
+services:
+  store.admin.product:
+    class: Urbem\StoreBundle\Resources\config\Sonata\Management\ProductAdmin
+    arguments: [~, Urbem\CoreBundle\Entity\Management\Product, SonataAdminBundle:CRUD]
+    # arguments: [~, Urbem\CoreBundle\Entity\Management\Product, StoreBundle:Management\ProductAdmin]
+    tags:
+      - { name: sonata.admin, manager_type: orm, group: admin, label: Product }

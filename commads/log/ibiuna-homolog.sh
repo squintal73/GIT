@@ -1,0 +1,1 @@
+sshpass -p '#ll2020@' ssh -t -o StrictHostKeyChecking=no -p 2259 lliegeadmin@200.201.218.66 "reset && sudo docker container exec postgres bash -c 'echo \"\" > /var/lib/postgresql/data/log/postgresql.log && tail -f /var/lib/postgresql/data/log/postgresql.log'"

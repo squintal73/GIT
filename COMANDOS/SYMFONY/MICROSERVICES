@@ -1,0 +1,9 @@
+sudo a2enmod php5.6 - Enable PHP 5.6
+sudo a2dismod php7.4 - Disable PHP 7.4
+
+Tradition web app
+composer create-project symfony/website-skeleton my_project_name
+
+Building a microservice, console app API
+
+composer create-project symfony/skeleton my_project_name

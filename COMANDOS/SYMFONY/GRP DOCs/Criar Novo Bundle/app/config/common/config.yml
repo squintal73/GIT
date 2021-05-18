@@ -1,0 +1,2 @@
+imports:
+    - { resource: "@StoreBundle/Resources/config/sonata.yml" }

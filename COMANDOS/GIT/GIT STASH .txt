@@ -1,0 +1,6 @@
+git stash save "Title save"
+git stash list
+git stash apply stash@{1}
+
+git stash drop stash@{4}
+git stash apply <hash drop>

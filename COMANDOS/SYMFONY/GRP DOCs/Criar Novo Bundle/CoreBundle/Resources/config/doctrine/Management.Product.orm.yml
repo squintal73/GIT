@@ -1,0 +1,19 @@
+Urbem\CoreBundle\Entity\Management\Product:
+    type: entity
+    table: store.product
+    repositoryClass: Urbem\CoreBundle\Repository\Management\ProductRepository
+    id:
+        codProduct:
+            type: integer
+            generator:
+                strategy: SEQUENCE
+            sequenceGenerator:
+                sequenceName: store.product_cod_product_seq
+                allocationSize: 1
+                initialValue: 1
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 100
+

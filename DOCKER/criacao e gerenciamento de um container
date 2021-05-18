@@ -1,0 +1,55 @@
+=============================================
+Sobe um Container <NGINX> 
+sudo docker container run --publish 8011:80 nginx
+sudo docker container run --name WEB-1 -d --publish 8012:80 nginx
+netstat -ano | grep :80
+=============================================
+verifica containers 
+ sudo docker container ls -a
+Sobe container 
+ sudo docker container start <id_container>
+Entra dentro no Container
+ sudo docker exec -it <name_container> bash
+ =====================================================
+ Criar um banco de dados MYSQL
+ 
+ sudo docker container run -d --publish 3306:3306 --name db -e MYSQL_RANDOM_ROOT_PASSWORD=yes mysql
+ sudo docker container run -d --publish 3306:3306 --name db -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql
+ sudo docker container run -d --publish 3306:3306 --name db -e MYSQL_ALLOW_EMPTY_PASSWORD=true -v mysql-db:/var/lib/mysql mysql-magento
+ 
+ 
+ Obs: nofinal da execucao GENERATED ROOT PASSWORD: @#$3Vsdf@!Cdbv43sdfg3sd75fbsd#d#$%$m45
+ Entrar dentro do container
+ 
+ sudo docker exec -it mysql bash
+ 
+ mysql -u root -p
+ 
+ ALTER USER 'root@localhost' IDENTIFIELD BY 'treinaweb'
+ 
+=======================================================
+Tag-[ar] a Imagem 
+
+sudo docker image tag ngnix squintal/nginx
+======================================================
+PUSH da imagem
+
+sudo image push squintal/nginx
+======================================================
+Build - container 
+
+Docker image build -t <nginx-treinaweb> .
+======================================================
+Data Volume - Container persistentes
+
+docker volume ls
+
+docker volume inspect 1d9071a13769da95aaa145d90d95ff5560ec8a517aa0bb3919bb47cec8de3c05
+
+docker volume prune - limpa todos os volumes.
+
+
+  
+ 
+ 
+ 

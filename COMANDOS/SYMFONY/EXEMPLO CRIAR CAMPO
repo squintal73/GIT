@@ -1,0 +1,30 @@
+VIEW do Exemplo 
+
+/var/www/html/grp3/src/Urbem/TributarioBundle/Resources/views/Economico/CadastroEconomico/cadastro_economico_autonomo_show.html.twig
+
+<tr class="sonata-ba-view-container">
+	    <th>{{ 'label.economicoCadastroEconomico.obs'|trans }}</th>
+	    <td>{{ '%s - %s'|format(admin.obs.getCodUf(), admin.obs.getNomUf()) }}</td>
+	</tr>
+
+
+
+CONTROLLER 
+
+/var/www/html/grp3/src/Urbem/TributarioBundle/Resources/config/Sonata/Economico/CadastroEconomicoDomicilioFiscalAdmin.php
+
+$fieldOptions['obs'] = [
+            'mapped' => false,
+            'required' => false,
+            'attr' => [
+                'class' => 'js-endereco-informado js-select-endereco-informado-obs js-endereco-informado-disabled ',
+            ],
+            'label' => 'label.economicoCadastroEconomico.obs',
+        ];
+        
+       
+       
+JQUERY 
+
+/var/www/html/grp3/src/Urbem/TributarioBundle/Resources/public/javascripts/economico/cadastro-economico-domicilio-fiscal.js
+

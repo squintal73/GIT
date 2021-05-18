@@ -1,0 +1,5 @@
+# StoreBundle
+store:
+    management:
+        home: Loja
+        product: Produto

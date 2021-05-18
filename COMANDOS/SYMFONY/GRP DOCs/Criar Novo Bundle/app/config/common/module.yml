@@ -1,0 +1,3 @@
+parameters:
+    modules: { store: true }
+

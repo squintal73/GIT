@@ -1,0 +1,66 @@
+GIT os 3 estagios 
+
+touch newfile
+1) Untracked files: 
+git add .
+2) Changes to be committed:
+neste ponto ele esta no stagind
+Obs: Caso queira voltar para Untracked, basta usar : git rm --cached <File> to unstage
+git commit -m "First Commit"
+1 file changed, 1 insertion(+).
+create mode 00000 <filename>
+
+
+=====================================
+
+git log - mostra seus commits.
+
+commit e2c127aa41b3eb674893102f1880db2cc0f8b2db (origin/T2930-Conta-Corrente, T2930-Conta-Corrente)
+Author: squintal73 <squintal73>
+Date:   Wed May 12 14:52:50 2021 -0300
+
+    002 correcao queries e tags
+    
+=====================================
+
+git commit 
+
+para editar dentro do commit 
+
+
+git commit -a -m "commit -m e add . juntos no mesmo commando" 
+
+=====================================
+
+git log -p (mostra todas as alteracoes do commit)
+git log --stat
+
+====================================
+
+git log --pretty=online 
+
+
+=====================================
+Voltar um file para Untracked 
+
+git reset HEAD <nomefile>
+
+=====================================
+voltar um ou "N" commits 
+
+git reset HEAD~1 ou "N" --soft
+git reset HEAD~1 ou "N" --hard ele tira o arquivo do commit
+
+====================================
+
+git merge branch 
+
+====================================
+
+
+
+====================================
+
+
+
+

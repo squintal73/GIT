@@ -1,0 +1,55 @@
+sudo docker exec -ti php-fpm5.6 bash -c "cd grp3 && php bin/console doc:mi:mi"
+sudo docker exec -ti php-fpm5.6 bash - entrar no contener.
+service php5.6-fpm reload
+
+
+Explain do Servico
+
+sudo docker exec -ti php-fpm5.6 bash -c "cd grp3 && php bin/console sonata:admin:explain prestacao_contas.admin.tribunalcontas"
+
+=============================================
+
+sudo docker images - lista todas as images
+
+=============================================
+Sobe um Container <NGINX> 
+docker container run --publish 8081:80 nginx
+netstat -ano | grep :80
+=============================================
+
+
+Nós podemos puxar a imagem com o seguinte comando: 
+
+1) docker pull <ubuntu> 
+
+Para iniciar um Docker container, use o comando:
+
+2) docker run <ubuntu>
+
+O container é criado, mas não iniciado.
+
+Para iniciar o container, nós usamos um comando como esse:
+
+3) docker run --name MyContainer -it ubuntu bash
+
+Agora nós podemos abrir outra janela de terminal SSH no servidor e rodar o comando:
+
+4) sudo docker ps -a
+
+Para parar o container, execute o seguinte comando:
+
+5) sudo docker stop MyContainer
+
+Finalmente, se quisermos finalizar um container Docker:
+
+6) sudo docker kill MyContainer
+
+=======================================================================
+
+sudo docker exec -ti <ubuntu> bash
+
+
+
+sudo docker-compose up -d
+
+

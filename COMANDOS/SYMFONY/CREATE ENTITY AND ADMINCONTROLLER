@@ -1,0 +1,43 @@
+Criar Entidade mesmo de Fake senao o Sonata nao reconhece as configurações:
+
+1) php bin/console make:entity Custom
+
+2) entrar na entity e adicionar um atributo exemplo:
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string")
+     */
+    private $name;
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     * @return Custom
+     */
+    public function setName(string $name)
+    {
+        $this->name = $name;
+        return $this;
+    }
+
+
+3) Rodar um Migration 
+
+php bin/console make:migration
+
+
+
+No arquivo service tem que ter a Entidate 
+Comando para verificar a Configuracao da ROTA no Admin
+
+
+php bin/console sonata:admin:explain admin.custom

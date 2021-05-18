@@ -1,0 +1,8 @@
+# Cria a migração
+docker exec -ti php-fpm5.6 bash -c "cd grp3 && php bin/console doc:mi:ge"
+
+# Rodar a migração
+docker exec -ti php-fpm5.6 bash -c "cd grp3 && php bin/console doc:mi:mi --no-interaction"
+
+# Rodar o down
+docker exec -ti php-fpm5.6 bash -c "cd grp3 && php bin/console doc:mi:exec --down 20210304170518"

@@ -1,0 +1,33 @@
+# subir o commit 
+
+git add .
+git commit -m "Descrição da tarefa"
+git push --set-upstream origin bugfix/TXXX
+ or 
+git push --set-upstream origin hotfix/TXXX
+
+# Trocar de branch
+
+git checkout OUTRA_BRANCH
+
+# Volte para branch anterior
+
+git checkout BRANCH_ANTERIOR
+
+# volte o último commit mas mantenha as informações
+
+git reset HEAD~1
+
+git branch -a
+# *master
+#  test
+#  remote/origin/master
+#  remote/origin/test
+
+# Deleted branch XXXX 
+
+git branch -d XXXX
+
+
+
+

@@ -1,0 +1,4 @@
+cat /etc/os-release - version of system
+lsb_release -a      - version of system
+
+

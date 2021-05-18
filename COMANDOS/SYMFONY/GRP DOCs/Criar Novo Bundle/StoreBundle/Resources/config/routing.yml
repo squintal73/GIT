@@ -1,0 +1,7 @@
+store:
+  path:     /
+  defaults: { _controller: StoreBundle:Home:index }
+
+store_management_product:
+  resource: "@StoreBundle/Resources/config/routing/Management/store_management_product.yml"
+  prefix:   /management/product

@@ -1,0 +1,48 @@
+<?php
+$variavel1 = '';
+$variavel2 = NULL;
+$variavel3 = 0;
+$variavel4 = array();
+$variavel5 = FALSE;
+ 
+ 
+// Testando variaveliaveis
+if( empty( $variavel1 ) ){
+    echo 'Esta linha é impressa porque o $variavel1 está vazio.';
+}
+ 
+echo "<br>";
+echo "<hr>";
+echo "<br>";
+ 
+if( empty( $variavel2 ) ){
+    echo 'Esta linha é impressa porque o $variavel2 está vazio.';
+}
+ 
+echo "<br>";
+echo "<hr>";
+echo "<br>";
+ 
+if( empty( $variavel3 ) ){
+    echo 'Esta linha é impressa porque o $variavel3 está vazio.';
+}
+ 
+echo "<br>";
+echo "<hr>";
+echo "<br>";
+ 
+if( empty( $variavel4 ) ){
+    echo 'Esta linha é impressa porque o $variavel4 está vazio.';
+}
+ 
+echo "<br>";
+echo "<hr>";
+echo "<br>";
+ 
+if( empty( $variavel5 ) ){
+    echo 'Esta linha é impressa porque o $variavel5 está vazio.';
+}
+
+?>
+
+

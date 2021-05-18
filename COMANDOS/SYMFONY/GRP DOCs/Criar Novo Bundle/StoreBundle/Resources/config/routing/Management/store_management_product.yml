@@ -1,0 +1,4 @@
+store_management_product_home:
+  path:     /home
+  defaults: { _controller: "StoreBundle:Management/Product:home" }
+  methods:  [GET]

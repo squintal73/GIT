@@ -1,0 +1,33 @@
+* git fetch 
+
+- Permite que um usuário obtenha todos os objetos do repositório remoto que atualmente não residem no diretório de trabalho local : 
+# git fetch origin
+
+* git rebase
+
+- É usado para reaplicação de compromissos em outro ramo.
+
+# git rebase master
+
+
+Lista os repositórios remotos atualmente:
+
+git remote –v
+
+- Conecte a um servidor remoto:
+
+git remote add origin <93.188.160.58>
+
+
+* git checkout
+
+ - git checkout pode ser usado para criar ou alternar, ramos.
+
+Cria um novo ramo e muda para ele:
+
+git checkout -b <branch-name>
+
+Mudar de um ramo para outro, use:
+
+git checkout <branch-name>
+

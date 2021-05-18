@@ -1,0 +1,65 @@
+Passos para atualizar o banco:
+
+Baixar o arquivo .SQL e mover para a pasta backup:
+
+=======================================================================
+
+sudo mv grp3_warroom15.sql /var/dockers/LLIEGE-GRP/postgres/backup 
+
+ou 
+
+Copiar o arquivo 
+sudo docker cp grp3_socitacao_38.sql postgres:/var/backups/grp3_socitacao.sql
+
+=======================================================================
+<DOCKER>
+
+docker container ls  
+sudo docker container ls
+[sudo] senha para squintal: 
+CONTAINER ID   IMAGE                                        COMMAND                  CREATED      STATUS        PORTS                                              NAMES
+4ab58108d502   docker.lliege.com.br/grp3/webserver-nginx    "/bin/sh -c 'nginx -…"   6 days ago   Up 29 hours   0.0.0.0:20080->80/tcp, 0.0.0.0:20443->443/tcp      webserver-nginx
+43c297114827   docker.lliege.com.br/grp3/php-fpm5.6         "/usr/sbin/php-fpm5.6"   6 days ago   Up 29 hours   0.0.0.0:29000->9000/tcp                            php-fpm5.6
+e98082f2598d   docker.lliege.com.br/grp3/webserver-apache   "/bin/sh -c '/usr/sb…"   6 days ago   Up 29 hours   0.0.0.0:20082->80/tcp                              webserver-apache
+c4687a2e5e37   docker.lliege.com.br/grp3/birt-viewer        "catalina.sh run"        6 days ago   Up 29 hours   0.0.0.0:28080->8080/tcp, 0.0.0.0:28443->8443/tcp   birt-viewer
+10431c279348   docker.lliege.com.br/grp3/postgres           "docker-entrypoint.s…"   6 days ago   Up 29 hours   0.0.0.0:25432->5432/tcp                            postgres
+ba962fdfdc9b   docker.lliege.com.br/grp3/mysql              "docker-entrypoint.s…"   6 days ago   Up 29 hours   33060/tcp, 0.0.0.0:23306->3306/tcp                 mysql
+\c 
+docker cp grp3.sql postgres:/var/backups/grp3.sql
+
+========================================================================
+
+
+Acessar o Container postgres:
+
+
+sudo docker exec -ti postgres bash
+
+Acessar o postgres
+
+root@2dd1772e37a6:/# psql -U postgres 
+psql (10.10 (Debian 10.10-1.pgdg90+1))
+
+Dropar a Base de dados - Caso necessario
+
+postgres=# drop database grp3;
+DROP DATABASE
+
+Crear a base novamente:
+
+postgres=# create database grp3; 
+CREATE DATABASE
+
+Acessar a Base GRP3
+
+
+postgres=# \c grp3 
+You are now connected to database "grp3" as user "postgres".
+
+Fazer o import da base:
+
+grp3=# \i /backup/grp3_warroom15.sql
+
+
+Done!!!
+

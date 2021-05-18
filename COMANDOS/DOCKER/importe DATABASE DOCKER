@@ -1,0 +1,13 @@
+sudo docker exec -ti postgres bash -c "pg_dump -U postgres -h 192.168.1.15 -p 25432 grp3 > /backup/grp3_050121.sql"
+sudo docker exec -ti postgres bash -c "psql -U postgres"
+DROP DATABASE grp3;
+CREATE DATABASE grp3;
+\c grp3;
+\i /backup/grp3_warroom15_20201020.sql
+
+
+--pg_dump -h 200.201.218.66 -p 25432 -U postgres -d grp3 > grp3_ibiuna_producao_17_06_2020.sql
+
+03:42 
+--psql -h localhost -p 25432 -U postgres -d grp3_prod_ibiuna_03062020 < grp3_ibiuna_producao_03_06_2020.sql
+
