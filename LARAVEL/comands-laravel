@@ -1,0 +1,53 @@
+Create MODEL CONTROLER RESOURCE AND MIGRATE
+
+php artisan make:model Servidor -m -c -r
+Model created successfully.
+Created Migration: 2021_05_30_210600_create_servidors_table
+Controller created successfully.
+
+=========================================================================================
+
+Alterar coluna em tabelas 
+
+Pegar o nome da migration da criacao da tabela 
+
+php artisan make:migration add_name_table_servidores --table=servidors
+
+alterar a coluna:
+
+public function up()
+    {
+        Schema::table('servidors', function (Blueprint $table) {
+        $table->string('name');
+        $table->string('email')->unique();
+        $table->string('idade');
+        });
+    }
+
+public function down()
+    {
+        Schema::table('servidors', function (Blueprint $table) {
+            $table->dropColumn('name');
+            $table->dropColumn('email');
+            $table->dropColumn('idade'); 
+        });
+    }
+    
+php artisan migrate
+
+============================================================================================
+
+GERAR DADOS COM FACTORY E SEEDER
+
+php artisan make:model Prod -m -c -r
+
+php artisan make:factory ProdFactory -m
+
+php artisan make:seeder ProdTableSeeder
+
+
+
+
+
+
+

@@ -1,0 +1,5 @@
+git log
+git commit --soft HEAD~1
+git log
+git commit --amend
+git push -f
