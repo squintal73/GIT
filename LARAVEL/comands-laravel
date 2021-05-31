@@ -43,7 +43,86 @@ php artisan make:model Prod -m -c -r
 
 php artisan make:factory ProdFactory -m
 
+
+<?php
+
+namespace Database\Factories;
+
+use App\Models\Prod;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
+
+class ProdFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Prod::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'product'=> $this->faker->name(),
+            'category'=> $this->faker->name(),
+            'valid'=> $this->faker->name(),
+         ];
+    }
+}
+
+
 php artisan make:seeder ProdTableSeeder
+
+
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+
+class ProdTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        \App\Models\Prod::factory(100)->create();
+    }
+}
+
+
+composer dump-autoload
+
+Generating optimized autoload files
+> Illuminate\Foundation\ComposerScripts::postAutoloadDump
+> @php artisan package:discover --ansi
+Discovered Package: facade/ignition
+Discovered Package: fideloper/proxy
+Discovered Package: fruitcake/laravel-cors
+Discovered Package: laravel/sail
+Discovered Package: laravel/tinker
+Discovered Package: nesbot/carbon
+Discovered Package: nunomaduro/collision
+Package manifest generated successfully.
+Generated optimized autoload files containing 4708 classes
+
+GERAR DADOS 
+
+php artisan db:seed --class=ProdTableSeeder
+
+
+RECRIAR O BANCO DE DADOS 
+
+php artisan migrate:fresh --seed
 
 
 
