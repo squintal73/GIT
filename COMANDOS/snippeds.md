@@ -30,12 +30,4 @@
 		],
 		"description": "PRINT DIE"
 	},
-
-	"Db3": {
-		"prefix": "dfd",
-		"body": [
-			"infra_conam::dbg_var($1);",
-		],
-		"description": "dbg_abort"
-	},
 }
