@@ -1,0 +1,86 @@
+Laravel\Sanctum\SanctumServiceProvider
+
+Create a Restfull
+
+1) laravel new rest
+2)composer require laravel/sanctum
+   php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+   
+3) php artisan migrate
+4) php artisan make:model Product -m -f -c --resource
+
+migrate:Product
+
+Schema::create('products', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->text('decription');
+            $table->float('price');
+
+            $table->timestamps();
+        });
+        
+        
+5) php artisan make:seeder ProductTableSeeder 
+
+================================================
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+
+class DatabaseSeeder extends Seeder
+{
+    /**
+     * Seed the application's database.
+     *
+     * @return void
+     */
+    public function run()
+    {
+         \App\Models\Product::factory(100)->create();
+       
+    }
+}
+
+======================================================
+6) edit Factory
+<?php
+
+namespace Database\Factories;
+
+use App\Models\Product;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class ProductFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Product::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'name' => $this->faker->name(),
+            'description' => $this->faker->sentence(),
+            'price'=> $this->faker->randomfloat(2,100,1000)
+            
+        ];
+    }
+}
+
+====================================================
+7) php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+
+
+
+continuando aqui : https://www.schoolofnet.com/canal-live-class/aula-ao-vivo-api-rest-com-laravel/
